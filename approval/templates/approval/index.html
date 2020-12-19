@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>전자결재 시스템</title>
+</head>
+<body>
+
+
+    <!-- auth -->
+    <div>
+        <a href="#login">로그인</a>
+    </div>
+    <div>
+        <a href="#login">회원가입</a>
+    </div>
+
+    <!-- main view -->
+    <div>
+        <p>기안 상신 목록</p>
+        {% if latest_paper_list %}
+            <ul>
+                {% for paper in latest_paper_list %}
+                    <li><a href="/paper/{{ paper_id }}">{{ paper.paper_text }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p> there is nothing available </p>
+    </div>
+
+
+
+</body>
+</html>
