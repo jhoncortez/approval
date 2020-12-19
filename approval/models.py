@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class paper(models.Model):
+class Paper(models.Model):
     title = models.CharField(max_length=100)
     pub_date = models.DateTimeField('date published') #create date
     drafter = models.CharField(max_length=20) #name
@@ -11,8 +11,8 @@ class paper(models.Model):
         return self.title
 
 
-class related_person(models.Model):
-    paper = models.ForeignKey(paper, on_delete=models.CASCADE) #paper id
+class Related_person(models.Model):
+    paper = models.ForeignKey(Paper, on_delete=models.CASCADE) #paper id
     first = models.CharField(max_length=10) #name
     second = models.CharField(max_length=10) #name
     third = models.CharField(max_length=10) #name
