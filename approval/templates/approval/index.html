@@ -12,7 +12,7 @@
         <a href="#login">로그인</a>
     </div>
     <div>
-        <a href="#login">회원가입</a>
+        <a href="/member/">회원가입</a>
     </div>
 
     <!-- main view -->
@@ -21,7 +21,7 @@
         {% if latest_paper_list %}
             <ul>
                 {% for paper in latest_paper_list %}
-                    <li><a href="/paper/{{ paper.id }}">{{ paper.title }}</a></li>
+                    <li><a href="/paper/{{ paper.id }}">[{{ paper.id }}번째 기안] {{ paper.title }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}

@@ -10,7 +10,7 @@ def index(request):
 
 
 def list_index(request):
-    latest_paper_list = Paper.objects.order_by('-pub_date')[:5]
+    latest_paper_list = Paper.objects.order_by('-pub_date')
     template = loader.get_template('approval/index.html')
 
     context = {
