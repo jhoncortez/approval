@@ -21,11 +21,12 @@
         {% if latest_paper_list %}
             <ul>
                 {% for paper in latest_paper_list %}
-                    <li><a href="/paper/{{ paper_id }}">{{ paper.paper_text }}</a></li>
+                    <li><a href="/paper/{{ paper.id }}">{{ paper.title }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}
             <p> there is nothing available </p>
+        {% endif %}
     </div>
 
 
