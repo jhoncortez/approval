@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Mbr, PER_list, Mbr_PER_list
+from .models import User, UserAuth, AuthInfo
 
 # Register your models here.
 
-admin.site.register(Mbr)
-admin.site.register(PER_list)
-admin.site.register(Mbr_PER_list)
+admin.site.register(User)
+admin.site.register(UserAuth)
+admin.site.register(AuthInfo)
