@@ -1,9 +1,10 @@
 from django.db import models
 from datetime import datetime
 
+
 class User(models.Model):
     # personal information
-    nickname = models.CharField(max_length=30)
+    nickname = models.CharField(max_length=30, unique=True)
     first_name = models.CharField(max_length=5)
     last_name = models.CharField(max_length=5)
 
@@ -11,16 +12,15 @@ class User(models.Model):
     email = models.CharField(max_length=30)
     password = models.CharField(max_length=50)
 
-    # find password information
-
-
     # other informations
     joined_date = models.DateTimeField('date joined', default=datetime.now)
     is_active = models.CharField(max_length=1, default='1')
+    is_superuser = models.CharField(max_length=1, default='0')
+    is_staff = models.CharField(max_length=1, default='0')
 
     # output
     def __str__(self):
-        response = self.nickname
+        response = self.last_name + self.first_name
         return response
 
 
@@ -54,5 +54,5 @@ class UserAuth(models.Model):
 
     # output
     def __str__(self):
-        response = str(self.UserId) + "(" + str(self.AuthId) + ")"
+        response = str(self.UserId) + ": " + str(self.AuthId)
         return response
