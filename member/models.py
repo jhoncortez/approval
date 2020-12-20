@@ -5,8 +5,9 @@ from datetime import datetime
 class User(models.Model):
     # personal information
     nickname = models.CharField(max_length=30, unique=True)
-    first_name = models.CharField(max_length=5)
-    last_name = models.CharField(max_length=5)
+    last_name = models.CharField(max_length=2)
+    first_name = models.CharField(max_length=3)
+
 
     # login information
     email = models.CharField(max_length=30)

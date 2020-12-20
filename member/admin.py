@@ -20,6 +20,7 @@ class UserAdmin(admin.ModelAdmin):
         ('other Informations - 1 (0: false, 1: true(default))', {'fields': ['is_active']}),
         ('other Informations - 2 (0: false(default), 1: true)', {'fields': ['is_staff', 'is_superuser']}),
     ]
+    list_display = ('last_name', 'first_name', 'joined_date', 'is_staff')
 
 
 # separate filed
