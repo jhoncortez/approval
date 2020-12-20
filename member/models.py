@@ -54,5 +54,5 @@ class UserAuth(models.Model):
 
     # output
     def __str__(self):
-        response = self.UserId + "(" + self.AuthId + ")"
+        response = str(self.UserId) + "(" + str(self.AuthId) + ")"
         return response
